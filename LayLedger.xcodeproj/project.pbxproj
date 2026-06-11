@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8F58E8342FDB151D0063055E /* codemagic.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 8F58E8332FDB151D0063055E /* codemagic.yaml */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		8F059BFD2FD849F7008C7797 /* LayLedger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayLedger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F58E8332FDB151D0063055E /* codemagic.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = codemagic.yaml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -45,6 +50,7 @@
 		8F059BF42FD849F7008C7797 = {
 			isa = PBXGroup;
 			children = (
+				8F58E8332FDB151D0063055E /* codemagic.yaml */,
 				8F059BFF2FD849F7008C7797 /* LayLedger */,
 				8F059BFE2FD849F7008C7797 /* Products */,
 			);
@@ -122,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F58E8342FDB151D0063055E /* codemagic.yaml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

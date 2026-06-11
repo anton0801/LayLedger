@@ -1,20 +1,20 @@
 workflows:
   sample-workflow:
-    name: WallGuard workflow
+    name: LayLedger workflow
     max_build_duration: 120
     instance_type: mac_mini_m2
     integrations:
-      app_store_connect: wall_guard
+      app_store_connect: lay_ledger
     environment:
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.guardingofwall.WallGuard
+        bundle_identifier: com.ledgeringinscop.LayLedger
       vars:
-        APP_STORE_CONNECT_KEY: wall_guard
-        APP_STORE_APPLE_ID: 6775932880
-        BUNDLE_ID: "com.guardingofwall.WallGuard"
-        XCODE_PROJECT: "WallGuard.xcodeproj"
-        XCODE_SCHEME: "WallGuard"
+        APP_STORE_CONNECT_KEY: lay_ledger
+        APP_STORE_APPLE_ID: 6779259145
+        BUNDLE_ID: "com.ledgeringinscop.LayLedger"
+        XCODE_PROJECT: "LayLedger.xcodeproj"
+        XCODE_SCHEME: "LayLedger"
     scripts:
       - name: Clean and Resolve SPM Dependencies
         script: |
