@@ -9,15 +9,13 @@ import SwiftUI
 
 @main
 struct LayLedgerApp: App {
-    @StateObject private var store = DataStore()
-    @StateObject private var theme = ThemeManager()
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
 
     var body: some Scene {
         WindowGroup {
-            RootView()
-                .environmentObject(store)
-                .environmentObject(theme)
-                .preferredColorScheme(theme.colorScheme)
+            LaunchView()
         }
     }
 }

@@ -1,11 +1,3 @@
-//
-//  OnboardingView.swift
-//  LayLedger
-//
-//  Three onboarding pages, each with a unique interactive element.
-//  Looping animations are reset in .onDisappear.
-//
-
 import SwiftUI
 
 struct OnboardingView: View {

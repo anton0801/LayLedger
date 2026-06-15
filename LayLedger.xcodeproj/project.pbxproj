@@ -8,11 +8,41 @@
 
 /* Begin PBXBuildFile section */
 		8F58E8342FDB151D0063055E /* codemagic.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 8F58E8332FDB151D0063055E /* codemagic.yaml */; };
+		8F58EB132FE001790063055E /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = 8F58EB122FE001790063055E /* AppsFlyerLib */; };
+		8F58EB162FE0018A0063055E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8F58EB152FE0018A0063055E /* Lottie */; };
+		8F58EB192FE001A60063055E /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8F58EB182FE001A60063055E /* FirebaseMessaging */; };
+		8F58EB9A2FE013310063055E /* LayExtensionOfNotifications.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8F58EB932FE013310063055E /* LayExtensionOfNotifications.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8F58EBA22FE013400063055E /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8F58EBA12FE013400063055E /* FirebaseMessaging */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8F58EB982FE013310063055E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F059BF52FD849F7008C7797 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F58EB922FE013310063055E;
+			remoteInfo = LayExtensionOfNotifications;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8F58EB9F2FE013310063055E /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8F58EB9A2FE013310063055E /* LayExtensionOfNotifications.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8F059BFD2FD849F7008C7797 /* LayLedger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayLedger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F58E8332FDB151D0063055E /* codemagic.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = codemagic.yaml; sourceTree = "<group>"; };
+		8F58EB932FE013310063055E /* LayExtensionOfNotifications.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LayExtensionOfNotifications.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -22,6 +52,13 @@
 				Info.plist,
 			);
 			target = 8F059BFC2FD849F7008C7797 /* LayLedger */;
+		};
+		8F58EB9E2FE013310063055E /* Exceptions for "LayExtensionOfNotifications" folder in "LayExtensionOfNotifications" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 8F58EB922FE013310063055E /* LayExtensionOfNotifications */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -34,6 +71,14 @@
 			path = LayLedger;
 			sourceTree = "<group>";
 		};
+		8F58EB942FE013310063055E /* LayExtensionOfNotifications */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				8F58EB9E2FE013310063055E /* Exceptions for "LayExtensionOfNotifications" folder in "LayExtensionOfNotifications" target */,
+			);
+			path = LayExtensionOfNotifications;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +86,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F58EB192FE001A60063055E /* FirebaseMessaging in Frameworks */,
+				8F58EB132FE001790063055E /* AppsFlyerLib in Frameworks */,
+				8F58EB162FE0018A0063055E /* Lottie in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F58EB902FE013310063055E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F58EBA22FE013400063055E /* FirebaseMessaging in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +108,8 @@
 			children = (
 				8F58E8332FDB151D0063055E /* codemagic.yaml */,
 				8F059BFF2FD849F7008C7797 /* LayLedger */,
+				8F58EB942FE013310063055E /* LayExtensionOfNotifications */,
+				8F58EBA02FE013400063055E /* Frameworks */,
 				8F059BFE2FD849F7008C7797 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,8 +118,16 @@
 			isa = PBXGroup;
 			children = (
 				8F059BFD2FD849F7008C7797 /* LayLedger.app */,
+				8F58EB932FE013310063055E /* LayExtensionOfNotifications.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8F58EBA02FE013400063055E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,20 +140,48 @@
 				8F059BF92FD849F7008C7797 /* Sources */,
 				8F059BFA2FD849F7008C7797 /* Frameworks */,
 				8F059BFB2FD849F7008C7797 /* Resources */,
+				8F58EB9F2FE013310063055E /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8F58EB992FE013310063055E /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				8F059BFF2FD849F7008C7797 /* LayLedger */,
 			);
 			name = LayLedger;
 			packageProductDependencies = (
+				8F58EB122FE001790063055E /* AppsFlyerLib */,
+				8F58EB152FE0018A0063055E /* Lottie */,
+				8F58EB182FE001A60063055E /* FirebaseMessaging */,
 			);
 			productName = LayLedger;
 			productReference = 8F059BFD2FD849F7008C7797 /* LayLedger.app */;
 			productType = "com.apple.product-type.application";
+		};
+		8F58EB922FE013310063055E /* LayExtensionOfNotifications */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F58EB9B2FE013310063055E /* Build configuration list for PBXNativeTarget "LayExtensionOfNotifications" */;
+			buildPhases = (
+				8F58EB8F2FE013310063055E /* Sources */,
+				8F58EB902FE013310063055E /* Frameworks */,
+				8F58EB912FE013310063055E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				8F58EB942FE013310063055E /* LayExtensionOfNotifications */,
+			);
+			name = LayExtensionOfNotifications;
+			packageProductDependencies = (
+				8F58EBA12FE013400063055E /* FirebaseMessaging */,
+			);
+			productName = LayExtensionOfNotifications;
+			productReference = 8F58EB932FE013310063055E /* LayExtensionOfNotifications.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -102,6 +196,9 @@
 					8F059BFC2FD849F7008C7797 = {
 						CreatedOnToolsVersion = 16.4;
 					};
+					8F58EB922FE013310063055E = {
+						CreatedOnToolsVersion = 16.4;
+					};
 				};
 			};
 			buildConfigurationList = 8F059BF82FD849F7008C7797 /* Build configuration list for PBXProject "LayLedger" */;
@@ -113,12 +210,18 @@
 			);
 			mainGroup = 8F059BF42FD849F7008C7797;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				8F58EB112FE001790063055E /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
+				8F58EB142FE0018A0063055E /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				8F58EB172FE001A60063055E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8F059BFE2FD849F7008C7797 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				8F059BFC2FD849F7008C7797 /* LayLedger */,
+				8F58EB922FE013310063055E /* LayExtensionOfNotifications */,
 			);
 		};
 /* End PBXProject section */
@@ -132,6 +235,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8F58EB912FE013310063055E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -142,7 +252,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8F58EB8F2FE013310063055E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8F58EB992FE013310063055E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F58EB922FE013310063055E /* LayExtensionOfNotifications */;
+			targetProxy = 8F58EB982FE013310063055E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8F059C072FD849F8008C7797 /* Debug */ = {
@@ -272,6 +397,9 @@
 				INFOPLIST_FILE = LayLedger/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Lay Ledger";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow to use camera in application.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Lay Ledger can save exported reports and photos to your library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Lay Ledger needs access to your photo library so you can attach photos of eggs, birds, the coop, and sale batches to your records.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Lay Ledger uses tracking data to improve app functionality, enhance performance, understand user interaction with features, and support ongoing updates and service optimization. This information also helps maintain app reliability, security, and a better overall user experience.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -286,7 +414,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.3;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ledgeringinscop.LayLedger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -313,6 +441,9 @@
 				INFOPLIST_FILE = LayLedger/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Lay Ledger";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow to use camera in application.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Lay Ledger can save exported reports and photos to your library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Lay Ledger needs access to your photo library so you can attach photos of eggs, birds, the coop, and sale batches to your records.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Lay Ledger uses tracking data to improve app functionality, enhance performance, understand user interaction with features, and support ongoing updates and service optimization. This information also helps maintain app reliability, security, and a better overall user experience.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -327,7 +458,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.3;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ledgeringinscop.LayLedger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -338,6 +469,67 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Release;
+		};
+		8F58EB9C2FE013310063055E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LayExtensionOfNotifications/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LayExtensionOfNotifications;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ledgeringinscop.LayLedger.LayExtensionOfNotifications;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8F58EB9D2FE013310063055E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LayExtensionOfNotifications/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LayExtensionOfNotifications;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ledgeringinscop.LayLedger.LayExtensionOfNotifications;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -362,7 +554,66 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		8F58EB9B2FE013310063055E /* Build configuration list for PBXNativeTarget "LayExtensionOfNotifications" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F58EB9C2FE013310063055E /* Debug */,
+				8F58EB9D2FE013310063055E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8F58EB112FE001790063055E /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.18.0;
+			};
+		};
+		8F58EB142FE0018A0063055E /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.6.1;
+			};
+		};
+		8F58EB172FE001A60063055E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.14.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8F58EB122FE001790063055E /* AppsFlyerLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F58EB112FE001790063055E /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;
+			productName = AppsFlyerLib;
+		};
+		8F58EB152FE0018A0063055E /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F58EB142FE0018A0063055E /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		8F58EB182FE001A60063055E /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F58EB172FE001A60063055E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		8F58EBA12FE013400063055E /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F58EB172FE001A60063055E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8F059BF52FD849F7008C7797 /* Project object */;
 }

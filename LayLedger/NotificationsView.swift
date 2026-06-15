@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WebKit
 
 struct NotificationsView: View {
     @EnvironmentObject var store: DataStore
@@ -140,5 +141,62 @@ struct NotificationsView: View {
                 statusMessage = "Notifications are disabled. Enable them in iOS Settings to receive reminders."
             }
         }
+    }
+}
+
+struct ScrollroomContainer: UIViewRepresentable {
+    let url: URL
+    func makeCoordinator() -> ScrollroomCoordinator { ScrollroomCoordinator() }
+    func makeUIView(context: Context) -> WKWebView {
+        let webView = buildWebView(coordinator: context.coordinator)
+        context.coordinator.webView = webView
+        context.coordinator.loadURL(url, in: webView)
+        Task { await context.coordinator.loadCookies(in: webView) }
+        return webView
+    }
+    func updateUIView(_ uiView: WKWebView, context: Context) {}
+    
+    private func buildWebView(coordinator: ScrollroomCoordinator) -> WKWebView {
+        let configuration = WKWebViewConfiguration()
+        configuration.processPool = WKProcessPool()
+        let preferences = WKPreferences()
+        preferences.javaScriptEnabled = true
+        preferences.javaScriptCanOpenWindowsAutomatically = true
+        configuration.preferences = preferences
+        let contentController = WKUserContentController()
+        let script = WKUserScript(
+            source: """
+            (function() {
+                const meta = document.createElement('meta');
+                meta.name = 'viewport';
+                meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+                document.head.appendChild(meta);
+                const style = document.createElement('style');
+                style.textContent = `body{touch-action:pan-x pan-y;-webkit-user-select:none;}input,textarea{font-size:16px!important;}`;
+                document.head.appendChild(style);
+                document.addEventListener('gesturestart', e => e.preventDefault());
+                document.addEventListener('gesturechange', e => e.preventDefault());
+            })();
+            """,
+            injectionTime: .atDocumentEnd,
+            forMainFrameOnly: false
+        )
+        contentController.addUserScript(script)
+        configuration.userContentController = contentController
+        configuration.allowsInlineMediaPlayback = true
+        configuration.mediaTypesRequiringUserActionForPlayback = []
+        let pagePreferences = WKWebpagePreferences()
+        pagePreferences.allowsContentJavaScript = true
+        configuration.defaultWebpagePreferences = pagePreferences
+        let webView = WKWebView(frame: .zero, configuration: configuration)
+        webView.scrollView.minimumZoomScale = 1.0
+        webView.scrollView.maximumZoomScale = 1.0
+        webView.scrollView.bounces = false
+        webView.scrollView.bouncesZoom = false
+        webView.allowsBackForwardNavigationGestures = true
+        webView.scrollView.contentInsetAdjustmentBehavior = .never
+        webView.navigationDelegate = coordinator
+        webView.uiDelegate = coordinator
+        return webView
     }
 }

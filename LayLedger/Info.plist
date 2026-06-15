@@ -11,10 +11,6 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Lay Ledger needs access to your photo library so you can attach photos of eggs, birds, the coop, and sale batches to your records.</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Lay Ledger can save exported reports and photos to your library.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
