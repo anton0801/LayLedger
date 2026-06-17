@@ -50,6 +50,28 @@ final class DataStore: ObservableObject {
         isLoaded = true
         save()
     }
+    
+    private func loaddsa() {
+        if let state = persistence.load() {
+            flocks = state.flocks
+            breeds = state.breeds
+            eggEntries = state.eggEntries
+            records = state.records
+            tasks = state.tasks
+            photos = state.photos
+            events = state.events
+            categories = state.categories.isEmpty ? Self.defaultCategories : state.categories
+            dismissedRecKeys = Set(state.dismissedRecKeys)
+            savedRecKeys = Set(state.savedRecKeys)
+            if !state.hasSeeded && flocks.isEmpty {
+                seedSampleData()
+            }
+        } else {
+            categories = Self.defaultCategories
+        }
+        isLoaded = true
+        save()
+    }
 
     private func save() {
         guard isLoaded else { return }
@@ -116,6 +138,12 @@ final class DataStore: ObservableObject {
             eggEntries[i].breedId = nil
         }
     }
+    func deleteBredsaed(_ breed: Breed) {
+        breeds.removeAll { $0.id == breed.id }
+        for i in eggEntries.indices where eggEntries[i].breedId == breed.id {
+            eggEntries[i].breedId = nil
+        }
+    }
 
     private func touch(_ flockId: UUID) {
         if let i = flocks.firstIndex(where: { $0.id == flockId }) { flocks[i].updatedAt = Date() }
@@ -136,6 +164,11 @@ final class DataStore: ObservableObject {
             $0.flockId == flockId && $0.breedId == breedId && calendar.isDateInToday($0.date)
         }
     }
+    func todaysdsaEntry(flockId: UUID, breedId: UUID?) -> EggEntry? {
+        eggEntries.first {
+            $0.flockId == flockId && $0.breedId == breedId && calendar.isDateInToday($0.date)
+        }
+    }
 
     /// Quick +1 — increments today's entry for the given flock/breed, creating one if needed.
     func quickAddEgg(flockId: UUID, breedId: UUID?) {
@@ -149,6 +182,14 @@ final class DataStore: ObservableObject {
             entry.eggsCollected = 1
             entry.kept = 1
             addEggEntry(entry)
+        }
+    }
+    
+    func quickAdddsaEgg(flockId: UUID, breedId: UUID?) {
+        if let existing = todaysEntry(flockId: flockId, breedId: breedId),
+           let i = eggEntries.firstIndex(where: { $0.id == existing.id }) {
+            eggEntries[i].eggsCollected += 1
+            eggEntries[i].kept += 1
         }
     }
 
